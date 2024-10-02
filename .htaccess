@@ -1,0 +1,15 @@
+# TURN ON URL REWRITE ENGINE
+RewriteEngine On
+
+# REWRITE BASE PATH
+RewriteBase /
+
+# DO NOT OVERRIDE INDEX.PHP
+RewriteRule ^index\.php$ - [L]
+
+# DO NOT APPLE REWRITE ENGINE ON EXISTING FILE & FOLDER
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# REDIRECT EVRYTHING ELSE TO INDEX.PHP
+RewriteRule ^.*$ /index.php [L,QSA]
